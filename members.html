@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members - MMLB</title>
+    <link rel="stylesheet" href="mmdl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="WechatIMG50.png" alt="MMLB Logo" class="logo-img">
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" data-trans="home">Home</a></li>
+                <li><a href="#projects" data-trans="projects">Projects</a></li>
+                <li><a href="#publications" data-trans="publications">Publications</a></li>
+                <li><a href="members.html" data-trans="members">Members</a></li>
+                <li><a href="#events" data-trans="events">Events</a></li>
+                <li><a href="#contact" data-trans="contact">Contact</a></li>
+            </ul>
+
+            <button class="language-switch" onclick="toggleLanguage()">
+                中文 | EN
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="search-section">
+            <input type="text" class="search-bar" placeholder="Search members..." data-trans="search-placeholder">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all" data-trans="filter-all">All</button>
+                <button class="filter-btn" data-filter="pi" data-trans="filter-pi">Supervisors</button>
+                <button class="filter-btn" data-filter="researcher" data-trans="filter-researcher">Researchers</button>
+                <button class="filter-btn" data-filter="student" data-trans="filter-student">Students</button>
+            </div>
+        </section>
+
+        <section class="members-grid">
+            <!-- Supervisor Example -->
+            <article class="member-card" data-role="pi">
+                <img src="path/to/member1.jpg" alt="Prof. Name" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name" data-trans="member1-name">Prof. Name</h2>
+                    <p class="member-role" data-trans="member1-role">Supervisor</p>
+                    <p class="member-bio" data-trans="member1-bio">Brief biography about the member and their research interests.</p>
+                    <div class="member-interests">
+                        <span class="interest-tag" data-trans="interest1">Machine Learning</span>
+                        <span class="interest-tag" data-trans="interest2">Computer Vision</span>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:email@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="publications-list">
+                        <h4 data-trans="recent-publications">Recent Publications</h4>
+                        <ul>
+                            <li><a href="#" data-trans="publication1">Publication Title 1 (2023)</a></li>
+                            <li><a href="#" data-trans="publication2">Publication Title 2 (2022)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Student Example -->
+            <article class="member-card" data-role="student">
+                <img src="path/to/member2.jpg" alt="Student Name" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name" data-trans="member2-name">Student Name</h2>
+                    <p class="member-role" data-trans="member2-role">Master Student</p>
+                    <p class="member-bio" data-trans="member2-bio">Research focused on deep learning applications in computer vision and natural language processing.</p>
+                    <div class="member-interests">
+                        <span class="interest-tag" data-trans="interest3">Deep Learning</span>
+                        <span class="interest-tag" data-trans="interest4">Natural Language Processing</span>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:student@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="publications-list">
+                        <h4 data-trans="recent-publications">Recent Publications</h4>
+                        <ul>
+                            <li><a href="#" data-trans="publication3">Student Publication 1 (2023)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" data-trans="footer-text">
+                © 2024 Multi-Modal Detection Lab, Nanjing University of Aeronautics and Astronautics. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script>
+        // Search and filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBar = document.querySelector('.search-bar');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const memberCards = document.querySelectorAll('.member-card');
+
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.filter;
+                    
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    memberCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.role === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            searchBar.addEventListener('input', () => {
+                const searchTerm = searchBar.value.toLowerCase();
+
+                memberCards.forEach(card => {
+                    const name = card.querySelector('.member-name').textContent.toLowerCase();
+                    const bio = card.querySelector('.member-bio').textContent.toLowerCase();
+                    const role = card.querySelector('.member-role').textContent.toLowerCase();
+
+                    if (name.includes(searchTerm) || bio.includes(searchTerm) || role.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // Initialize language if needed
+            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            if (preferredLanguage === 'zh') {
+                document.documentElement.lang = 'zh';
+                updateContent('zh');
+            }
+        });
+    </script>
+</body>
+</html> 
