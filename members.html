@@ -11,16 +11,14 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="WechatIMG50.png" alt="MMLB Logo" class="logo-img">
+                <img src="files/logo.png" alt="MMLB Logo" class="logo-img">
             </div>
             
             <ul class="nav-menu">
                 <li><a href="index.html" data-trans="home">Home</a></li>
-                <li><a href="#projects" data-trans="projects">Projects</a></li>
-                <li><a href="#publications" data-trans="publications">Publications</a></li>
+                <li><a href="research.html" data-trans="research">Research</a></li>
+                <li><a href="publications.html" data-trans="publications">Publications</a></li>
                 <li><a href="members.html" data-trans="members">Members</a></li>
-                <li><a href="#events" data-trans="events">Events</a></li>
-                <li><a href="#contact" data-trans="contact">Contact</a></li>
             </ul>
 
             <button class="language-switch" onclick="toggleLanguage()">
@@ -35,71 +33,150 @@
             <div class="filters">
                 <button class="filter-btn active" data-filter="all" data-trans="filter-all">All</button>
                 <button class="filter-btn" data-filter="pi" data-trans="filter-pi">Supervisors</button>
-                <button class="filter-btn" data-filter="researcher" data-trans="filter-researcher">Researchers</button>
                 <button class="filter-btn" data-filter="student" data-trans="filter-student">Students</button>
             </div>
         </section>
 
         <section class="members-grid">
-            <!-- Supervisor Example -->
-            <article class="member-card" data-role="pi">
-                <img src="path/to/member1.jpg" alt="Prof. Name" class="member-photo">
+            <!-- Supervisor Card -->
+            <div class="member-card" data-role="pi">
+                <img src="files/Teacher.jpg" alt="Professor Aimin Feng" class="member-photo">
                 <div class="member-info">
-                    <h2 class="member-name" data-trans="member1-name">Prof. Name</h2>
+                    <h2 class="member-name" data-trans="member1-name">Prof. Aimin Feng</h2>
                     <p class="member-role" data-trans="member1-role">Supervisor</p>
-                    <p class="member-bio" data-trans="member1-bio">Brief biography about the member and their research interests.</p>
+                    <p class="member-bio" data-trans="member1-bio">Professor at the College of Computer Science and Technology, Nanjing University of Aeronautics and Astronautics. Research interests include machine learning, deep learning, pattern recognition, and anomaly detection.</p>
                     <div class="member-interests">
                         <span class="interest-tag" data-trans="interest1">Machine Learning</span>
-                        <span class="interest-tag" data-trans="interest2">Computer Vision</span>
+                        <span class="interest-tag" data-trans="interest2">Deep Learning</span>
+                        <span class="interest-tag">Pattern Recognition</span>
+                        <span class="interest-tag">Anomaly Detection</span>
                     </div>
                     <div class="member-contacts">
-                        <a href="mailto:email@example.com" class="contact-link">
+                        <a href="mailto:fengaimin@nuaa.edu.cn" class="contact-link">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://linkedin.com/" class="contact-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://scholar.google.com.hk/citations?user=9l6IV0oAAAAJ&hl=zh-CN&oi=sra" class="contact-link" target="_blank">
+                            <i class="fas fa-graduation-cap"></i>
                         </a>
                     </div>
-                    <div class="publications-list">
-                        <h4 data-trans="recent-publications">Recent Publications</h4>
-                        <ul>
-                            <li><a href="#" data-trans="publication1">Publication Title 1 (2023)</a></li>
-                            <li><a href="#" data-trans="publication2">Publication Title 2 (2022)</a></li>
-                        </ul>
-                    </div>
                 </div>
-            </article>
+            </div>
 
-            <!-- Student Example -->
+            <!-- Student 1 -->
             <article class="member-card" data-role="student">
-                <img src="path/to/member2.jpg" alt="Student Name" class="member-photo">
+                <img src="files/student1.jpg" alt="PhD Student" class="member-photo">
                 <div class="member-info">
-                    <h2 class="member-name" data-trans="member2-name">Student Name</h2>
-                    <p class="member-role" data-trans="member2-role">Master Student</p>
-                    <p class="member-bio" data-trans="member2-bio">Research focused on deep learning applications in computer vision and natural language processing.</p>
+                    <h2 class="member-name" data-trans="student1-name">Zhang Wei</h2>
+                    <p class="member-role" data-trans="student1-role">PhD Student</p>
+                    <p class="member-bio" data-trans="student1-bio">Research focused on deep learning and multi-modal anomaly detection in industrial applications.</p>
                     <div class="member-interests">
-                        <span class="interest-tag" data-trans="interest3">Deep Learning</span>
-                        <span class="interest-tag" data-trans="interest4">Natural Language Processing</span>
+                        <span class="interest-tag">Deep Learning</span>
+                        <span class="interest-tag">Anomaly Detection</span>
+                        <span class="interest-tag">Industrial AI</span>
                     </div>
                     <div class="member-contacts">
-                        <a href="mailto:student@example.com" class="contact-link">
+                        <a href="mailto:zhangwei@nuaa.edu.cn" class="contact-link">
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="https://github.com/" class="contact-link" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com/" class="contact-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                    <div class="publications-list">
-                        <h4 data-trans="recent-publications">Recent Publications</h4>
-                        <ul>
-                            <li><a href="#" data-trans="publication3">Student Publication 1 (2023)</a></li>
-                        </ul>
                     </div>
                 </div>
             </article>
+
+            <!-- Student 2 -->
+            <article class="member-card" data-role="student">
+                <img src="files/student2.jpg" alt="PhD Student" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name" data-trans="student2-name">Li Mei</h2>
+                    <p class="member-role" data-trans="student2-role">PhD Student</p>
+                    <p class="member-bio" data-trans="student2-bio">Specializing in pattern recognition and machine learning algorithms for multi-modal data analysis.</p>
+                    <div class="member-interests">
+                        <span class="interest-tag">Pattern Recognition</span>
+                        <span class="interest-tag">Machine Learning</span>
+                        <span class="interest-tag">Data Analysis</span>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:limei@nuaa.edu.cn" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Student 3 -->
+            <article class="member-card" data-role="student">
+                <img src="files/student3.jpg" alt="Master Student" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name" data-trans="student3-name">Wang Chen</h2>
+                    <p class="member-role" data-trans="student3-role">Master Student</p>
+                    <p class="member-bio" data-trans="student3-bio">Working on deep learning approaches for real-time anomaly detection in video streams.</p>
+                    <div class="member-interests">
+                        <span class="interest-tag">Computer Vision</span>
+                        <span class="interest-tag">Deep Learning</span>
+                        <span class="interest-tag">Real-time Processing</span>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:wangchen@nuaa.edu.cn" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Student 4 -->
+            <article class="member-card" data-role="student">
+                <img src="files/student4.jpg" alt="Master Student" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name" data-trans="student4-name">Liu Jing</h2>
+                    <p class="member-role" data-trans="student4-role">Master Student</p>
+                    <p class="member-bio" data-trans="student4-bio">Researching multi-modal fusion techniques for robust anomaly detection systems.</p>
+                    <div class="member-interests">
+                        <span class="interest-tag">Multi-modal Fusion</span>
+                        <span class="interest-tag">Deep Learning</span>
+                        <span class="interest-tag">System Design</span>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:liujing@nuaa.edu.cn" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Student 5 -->
+            <article class="member-card" data-role="student">
+                <img src="files/student5.jpg" alt="Master Student" class="member-photo">
+                <div class="member-info">
+                    <h2 class="member-name" data-trans="student5-name">Zhao Ming</h2>
+                    <p class="member-role" data-trans="student5-role">Master Student</p>
+                    <p class="member-bio" data-trans="student5-bio">Developing efficient algorithms for large-scale anomaly detection in industrial IoT systems.</p>
+                    <div class="member-interests">
+                        <span class="interest-tag">IoT Systems</span>
+                        <span class="interest-tag">Algorithm Design</span>
+                        <span class="interest-tag">Edge Computing</span>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:zhaoming@nuaa.edu.cn" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
         </section>
     </main>
 

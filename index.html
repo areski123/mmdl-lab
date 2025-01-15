@@ -11,16 +11,14 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="WechatIMG50.png" alt="MMLB Logo">
+                <img src="files/logo.png" alt="MMLB Logo">
             </div>
             
             <ul class="nav-menu">
-                <li><a href="#home" data-trans="home">Home</a></li>
-                <li><a href="#projects" data-trans="projects">Projects</a></li>
-                <li><a href="#publications" data-trans="publications">Publications</a></li>
+                <li><a href="index.html" data-trans="home">Home</a></li>
+                <li><a href="research.html" data-trans="research">Research</a></li>
+                <li><a href="publications.html" data-trans="publications">Publications</a></li>
                 <li><a href="members.html" data-trans="members">Members</a></li>
-                <li><a href="#events" data-trans="events">Events</a></li>
-                <li><a href="#contact" data-trans="contact">Contact</a></li>
             </ul>
 
             <button class="language-switch" onclick="toggleLanguage()">
@@ -33,13 +31,13 @@
         <!-- Carousel Section -->
         <section class="carousel">
             <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="files/WechatIMG217.jpg" alt="AI Research" data-trans="slide1-alt">
+                <div class="carousel-slide" style="transform: translateX(0%)">
+                    <img src="files/pexels-googledeepmind-17483874.jpg" alt="AI Research" data-trans="slide1-alt">
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" style="transform: translateX(100%)">
                     <img src="files/pexels-cottonbro-6804068.jpg" alt="Lab Research" data-trans="slide2-alt">
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" style="transform: translateX(200%)">
                     <img src="files/pexels-mike-van-schoonderwalt-1884800-5506058.jpg" alt="Team Collaboration" data-trans="slide3-alt">
                 </div>
                 <button class="carousel-btn prev" onclick="moveSlide(-1)">
@@ -81,6 +79,29 @@ Our research is focused on the field of anomaly detection and we aim to develop 
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="latest-news">
+            <h2 class="section-title" data-trans="news-title">Latest News & Updates</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <img src="files/WechatIMG217.jpg" alt="Lab Members Dinner" class="news-image" data-trans="news1-img-alt">
+                    <h3 data-trans="news1-title">Lab Members Gathering</h3>
+                    <p data-trans="news1-desc">Our lab members gathered for a wonderful dinner, strengthening our bonds and celebrating our collaborative spirit.</p>
+                </div>
+                <div class="news-item">
+                    <img src="files/pexels-googledeepmind-17483874.jpg" alt="Research Achievement" class="news-image" data-trans="news2-img-alt">
+                    <h3 data-trans="news2-title">Paper Accepted at Top Conference</h3>
+                    <p data-trans="news2-desc">Our latest work on deep learning for anomaly detection has been accepted at a prestigious conference.</p>
+                </div>
+                <div class="news-item">
+                    <img src="files/pexels-cottonbro-6804068.jpg" alt="Industry Collaboration" class="news-image" data-trans="news3-img-alt">
+                    <h3 data-trans="news3-title">Industry Collaboration</h3>
+                    <p data-trans="news3-desc">New partnership established with leading tech company for applied research projects.</p>
+                </div>
+            </div>
+            <button class="view-all-btn" data-trans="news-more">View All News</button>
         </section>
     </main>
 
@@ -167,6 +188,20 @@ Our research is focused on the field of anomaly detection and we aim to develop 
             if (preferredLanguage === 'zh') {
                 toggleLanguage();
             }
+        });
+
+        // Debug image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                console.log('Image src:', img.src);
+                img.onerror = function() {
+                    console.error('Failed to load image:', this.src);
+                };
+                img.onload = function() {
+                    console.log('Successfully loaded image:', this.src);
+                };
+            });
         });
     </script>
 </body>

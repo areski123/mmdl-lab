@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - MMLB</title>
+    <link rel="stylesheet" href="mmdl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="files/logo.png" alt="MMLB Logo" class="logo-img">
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" data-trans="home">Home</a></li>
+                <li><a href="research.html" data-trans="research">Research</a></li>
+                <li><a href="publications.html" data-trans="publications">Publications</a></li>
+                <li><a href="members.html" data-trans="members">Members</a></li>
+            </ul>
+
+            <button class="language-switch" onclick="toggleLanguage()">
+                中文 | EN
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="main-title" data-trans="selected-research">-- Selected Research Topics --</h1>
+
+        <div class="research-topics">
+            <div class="research-topic">
+                <div class="topic-content">
+                    <h2 data-trans="research1-title">Multi-modal Detection</h2>
+                    <p data-trans="research1-desc-detailed">Our research focuses on developing advanced techniques for detecting patterns across multiple data modalities including images, text, and signals. We work on creating robust algorithms that can effectively process and analyze data from various sources simultaneously, leading to more accurate and reliable detection systems.</p>
+                </div>
+            </div>
+
+            <div class="research-topic">
+                <div class="topic-content">
+                    <h2 data-trans="research2-title">Active Learning</h2>
+                    <p data-trans="research2-desc-detailed">In many real-world problems, unlabeled data are often abundant whereas labeled data are scarce. Our research in active learning aims at reducing human efforts on annotating examples in machine learning systems. We develop intelligent sampling strategies and interactive learning frameworks to maximize learning efficiency with minimal human intervention.</p>
+                </div>
+            </div>
+
+            <div class="research-topic">
+                <div class="topic-content">
+                    <h2 data-trans="research3-title">Deep Learning</h2>
+                    <p data-trans="research3-desc-detailed">Our deep learning research focuses on developing innovative architectures for improved feature extraction and representation learning. We explore advanced neural network designs and training strategies to enhance performance across various applications, from computer vision to natural language processing.</p>
+                </div>
+            </div>
+
+            <div class="research-topic">
+                <div class="topic-content">
+                    <h2 data-trans="research4-title">Anomaly Detection</h2>
+                    <p data-trans="research4-desc-detailed">We develop advanced methods for identifying irregularities and unusual patterns in complex datasets. Our research combines statistical approaches with modern machine learning techniques to create robust anomaly detection systems that can adapt to various domains and data types.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" data-trans="footer-text">
+                © 2024 Multi-Modal Detection Lab, Nanjing University of Aeronautics and Astronautics. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            if (preferredLanguage === 'zh') {
+                document.documentElement.lang = 'zh';
+                updateContent('zh');
+            }
+        });
+    </script>
+</body>
+</html> 
